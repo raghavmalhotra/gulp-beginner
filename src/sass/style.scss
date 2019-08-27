@@ -1,0 +1,9 @@
+$primary: #e71212cc;
+$secondary: #12e7d5cc;
+
+body{
+    background: $primary;
+    h1{
+        color: $secondary
+    }
+}

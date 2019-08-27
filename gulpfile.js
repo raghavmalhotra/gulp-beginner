@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
 const sass =require('gulp-sass');
+const concat = require('gulp-concat');
 /*
 -- TOP LEVEL FUNCTIONS --
 
@@ -59,6 +60,16 @@ gulp.task('sass',(done)=>{
 
 })
 
+// task to concat js files
+
+gulp.task('concatjs',(done)=>{
+    gulp.src('src/js/*.js')
+        .pipe(concat('main.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js'));
+    done();
+})
+
 // default task
-gulp.task('default',gulp.parallel('copyhtml','imageMin','sass','uglify'))
+gulp.task('default',gulp.parallel('copyhtml','imageMin','sass','concatjs'))
 

@@ -1,2 +1,2 @@
-# gul-beginner
+# gulp-beginner
 gulp stater files

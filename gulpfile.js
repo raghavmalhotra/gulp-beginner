@@ -71,5 +71,18 @@ gulp.task('concatjs',(done)=>{
 })
 
 // default task
-gulp.task('default',gulp.parallel('copyhtml','imageMin','sass','concatjs'))
+gulp.task('default',gulp.parallel('copyhtml','imageMin','sass','concatjs'));
+
+
+// the infamous watch task
+
+gulp.task('watch',(done)=>{
+    gulp.watch('src/sass/*.scss',gulp.parallel('sass'))
+    gulp.watch('src/*html',gulp.parallel('copyhtml'))
+    gulp.watch('src/js/*js',gulp.parallel('concatjs'))
+    gulp.watch('src/images/*',gulp.parallel('imageMin'))
+    console.log('watching.....')
+    done()
+
+})
 

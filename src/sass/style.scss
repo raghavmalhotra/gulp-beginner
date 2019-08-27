@@ -1,9 +1,12 @@
+// sample sass
+
 $primary: #e71212cc;
 $secondary: #12e7d5cc;
 
 body{
     background: $primary;
     h1{
-        color: $secondary
+        color: $secondary;
+        background: rgb(156, 216, 45);
     }
 }
